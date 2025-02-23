@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт о телеграмм канале "Катя и ее принтер"</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #dcc9b6;
+        }
+        .hero {
+            background-image: url('фото 0.jpg'); 
+            background-size: cover;
+            height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            width: 1000px; 
+            background-color: #727d71;
+            padding: 50px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            color: #000;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .photos {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 5px; 
+            justify-content: center; 
+        }
+        .photo {
+            width: 250px; 
+            height: 250px; 
+            overflow: hidden; 
+        }
+        .photo img {
+            width: 100%; 
+            height: auto; 
+        }
+        #faq {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer-section {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Сайт о телеграмм канале "Катя и ее принтер"</h1>
+        <button class="qr-button" onclick="openModal()">Показать QR Код</button>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h2>Навигация</h2>
+            <a href="#about">О канале</a>
+            <a href="#gallery">Фото</a>
+            <a href="#contact">Информация про меня</a>
+            <a href="#faq">Контакты</a>
+        </div>
+    
+        <div class="content">
+            <section id="about">
+                <h2>О канале</h2>
+                <p>Добро пожаловать в наш тгк, посвященный милейшей девушке и ее коту!</p>
+                <p>Здесь публикуются фотографии меня и моего милого Беляшика.</p>  
+                <p>Раздели со мной радостные, грустные и иногда волнительные моменты.</p>  
+                <p>Подписывайся и стань частью моего блога)</p>
+            </section>
+    
+            <section id="gallery">
+                <h2>Фото</h2>
+                <div class="photos">
+                    <div class="photo"><img src="фото 1.jpg" alt="Фото  1"></div>
+                    <div class="photo"><img src="фото 2.jpg" alt="Фото  2"></div>
+                    <div class="photo"><img src="фото 3.jpg" alt="Фото кота 3"></div>
+                    <div class="photo"><img src="фото 4.jpg" alt="Фото кота 4"></div>
+                    <div class="photo"><img src="фото 5.jpg" alt="Фото кота 5"></div>
+                    <div class="photo"><img src="фото 6.jpg" alt="Фото кота 6"></div>
+                    <div class="photo"><img src="фото 7.jpg" alt="Фото кота 7"></div>
+                    <div class="photo"><img src="фото 8.jpg" alt="Фото кота 8"></div>
+                    <div class="photo"><img src="фото 9.jpg" alt="Фото кота 9"></div>      
+                    <div class="photo"><img src="фото 10.jpg" alt="Фото кота "></div>    
+                    <div class="photo"><img src="фото 11.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="фото 12.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="фото 13.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="фото 15.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="14.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="16.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="17.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="18.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="19.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="20.jpg" alt="Фото кота "></div>    
+                    <div class="photo"><img src="21.jpg" alt="Фото кота "></div>  
+                    <div class="photo"><img src="22.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="23.jpg" alt="Фото кота "></div>
+                    <div class="photo"><img src="24.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="25.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="26.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="27.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="28.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="29.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="30.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="31.jpg" alt="Фото кота "></div> 
+                    <div class="photo"><img src="32.jpg" alt="Фото кота "></div> 
+                              
+                </div>
+            </section>
+    
+            <section id="contact">
+                <h2>Информация про меня</h2>
+                <p>Меня зовут Катя.</p>
+                <p>Мне 20 лет.</p>
+                <p>По зодиаку я лев.</p>
+                <p>Люблю буэно, а еще мороженое Милка. Ненавижу яйца... </p>
+                <p>Обожаю запах манго.</p>
+            </section>
+    
+            <section id="faq">
+                <h2>Контакты</h2>
+                <a href="tg://resolve?domain=ravvvvka">Мой аккаунт в телеграмме</a>
+                <a href="http://vk.com/blooming_birch">Мой вк</a>
+                <a href="https://t.me/+an_IOpQSoh0yY2Zi">Мой телеграмм канал</a>
+            </section>
+        </div>
+    </div>
+    
+    <div id="qr-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img src="qr-code.png" alt="QR Код" class="modal-content">
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-section">
+            <p>© 2025 Сайт о телеграмм канале "Катя и ее принтер". Все права защищены.</p>
+        </div>
+        <div class="footer-section">
+            <p>Контактная информация: ravvvkata555@gmail.com </p>
+        </div>
+    </footer>
+    
+    <script>
+        function openModal() {
+            document.getElementById('qr-modal').style.display = 'flex';
+        }
+    
+        function closeModal() {
+            document.getElementById('qr-modal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('qr-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+    
+</body>
+</html>

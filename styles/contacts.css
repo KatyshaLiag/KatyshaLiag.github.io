@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Spectral', serif;
+  background-color: #bb8588;
+  color: #4c3f2f;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+a {
+  /* color: #bb8588; */
+  text-decoration: none;
+}
+
+.spacer {
+  height: 40px;
+}
+
+.section-gap {
+  height: 80px;
+}
+
+.footer-gap {
+  height: 60px;
+}
+
+header {
+  background-color: #efebce;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Kelly Slab', cursive;
+  font-size: 32px;
+  color: #bb8588;
+}
+
+nav a {
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  color: #bb8588;
+}
+
+nav a:hover {
+  color: #d8a48f;
+}
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 40px;
+    font-family: "Spectral", serif;
+    font-size: 2.5rem;
+}
+
+/* Контактная информация */
+.contact-info-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: #fffef5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    max-width: 900px;
+    margin: 0 auto 50px;
+    align-items: stretch;
+    border: 2px solid #bb8588
+}
+
+.map-container {
+    flex: 1 1 400px;
+    min-width: 300px;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+a {
+    text-decoration: none;
+}
+.info-container {
+    flex: 1 1 400px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    font-size: 18px;
+    /* color: #bb8588; */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-item svg {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    fill: #000;
+}
+
+.info-item strong {
+    min-width: 120px;
+    display: inline-block;
+    color: #000;
+}
+
+/* Обратная связь */
+.feedback-section {
+    background: #fffef5;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+    border: 2px solid #bb8588;
+}
+
+.feedback-section h2 {
+    margin-top: 0;
+    color: #b59d4d;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.feedback-section p {
+    margin-top: 0;
+    font-size: 18px;
+    color: #4a3f35;
+}
+
+/* Форма обратной связи */
+form.contact-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fffef5;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+    color: #4a3f35;
+    border: 2px solid #bb8588;
+}
+
+form.contact-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+form.contact-form input,
+form.contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1.5px solid #bb8588;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: "Spectral", serif;
+    color: #bb8588;
+    transition: border-color 0.3s ease;
+}
+
+form.contact-form input:focus,
+form.contact-form textarea:focus {
+    outline: none;
+    border-color: #d8a400;
+    box-shadow: 0 0 6px #d8a400aa;
+}
+
+form.contact-form textarea {
+    min-height: 100px;
+}
+
+form.contact-form button {
+    align-self: center;
+    background-color: #bb8588;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 700;
+    box-shadow: 0 4px 8px #bb8588(176, 77, 181, 0.6);
+    transition: background-color 0.3s ease;
+    font-family: "Spectral", serif;
+}
+
+form.contact-form button:hover {
+    background-color: #bb8588;
+}
+
+/* Подвал */
+footer {
+    background-color: #efebce;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 16px;
+    color: #4c3f2f;
+    gap: 20px;
+    border-top: 4px solid #bb8588;
+}
+
+.footer-block {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.footer-block:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #bb8588;
+}
+
+footer .logo {
+    font-family: "Kelly Slab", cursive;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #bb8588;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+    opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact-info-block {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .map-container,
+    .info-container {
+        width: 100%;
+        min-width: auto;
+        height: 280px;
+    }
+    
+    .info-container {
+        height: auto;
+    }
+    
+    form.contact-form,
+    .feedback-section {
+        padding: 25px 20px;
+    }
+    
+    .footer-block {
+        flex: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer-block:not(:last-child)::after {
+        display: none;
+    }
+}

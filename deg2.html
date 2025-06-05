@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Spectral&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"
+        />
+        <title>Записаться на дегустацию | Сыр&Ко</title>
+        <link rel="stylesheet" href="styles/deg.css" />
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo"> Сыр & Ко </a>
+            <nav>
+                <a href="catalog.html">Каталог</a>
+                <a href="sell.html">Акции</a>
+                <a href="blog.html">Блог</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Записаться на дегустацию</h1>
+            <p class="invite-text">
+                Приглашаем на дегустацию сыра <strong>Чеддер</strong> 05.06.2025 в
+                15:00<br />
+                в ресторане <strong>TSURU</strong>
+            </p>
+
+            <form id="tastingForm" novalidate>
+                <label for="name">Ваше имя</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Введите имя"
+                    required
+                    autocomplete="name"
+                />
+
+                <label for="phone">Номер телефона</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7 (___) ___-__-__"
+                    required
+                    pattern="^\+?[\d\s\-\(\)]{7,}$"
+                    autocomplete="tel"
+                />
+
+                <button type="submit">Записаться</button>
+            </form>
+        </main>
+
+        <footer>
+            <div class="footer-block">
+                <div class="logo">Сыр & Ко</div>
+                <div class="social-icons">
+                    <a href="tel:+79262227122"
+                        ><img src="image (1).png" alt="phone"
+                    /></a>
+                    <a href="https://vk.com/yourcompany" target="_blank"
+                        ><img src="image (2).png" alt="vk"
+                    /></a>
+                    <a href="https://t.me/yourcompany" target="_blank"
+                        ><img src="image (3).png" alt="telegram"
+                    /></a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-block">
+                <p>
+                    <strong>Адрес:</strong><br />Красноярск, ул. Щорса, 49<br />10:00
+                    – 22:00
+                </p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-block">
+                <p>
+                    <strong>Контакты:</strong><br />+7 (926) 222-71-22<br />yoprosi@gmail.com<br />ИНН:
+                    212340344883473
+                </p>
+            </div>
+        </footer>
+
+        <!-- Модальное окно -->
+        <div
+            id="modal"
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+            aria-describedby="modalDesc"
+        >
+            <div class="modal-content">
+                <span class="modal-close" aria-label="Закрыть окно" tabindex="0"
+                    >&times;</span
+                >
+                <p id="modalDesc">
+                    Спасибо за заявку! С вами свяжется администратор для
+                    уточнения подробностей.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            const form = document.getElementById("tastingForm");
+            const modal = document.getElementById("modal");
+            const modalClose = modal.querySelector(".modal-close");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                // Простая валидация
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                // Можно здесь отправлять данные на сервер, а пока просто показываем модал
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+                form.reset();
+            });
+
+            modalClose.addEventListener("click", closeModal);
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) closeModal();
+            });
+            modalClose.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    closeModal();
+                }
+            });
+
+            function closeModal() {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Spectral:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <title>Сыр & Ко - Акции</title>
+        <link rel="stylesheet" href="styles/sell.css" />
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo"> Сыр & Ко </a>
+            <nav>
+                <a href="catalog.html">Каталог</a>
+                <a href="sell.html">Акции</a>
+                <a href="blog.html">Блог</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <h1 class="section-title">Акции и спецпредложения</h1>
+
+            <section class="promo-section">
+                <div class="promo-container" id="promo-container">
+                    <!-- Акции будут добавлены динамически -->
+                </div>
+
+                <div class="promo-nav">
+                    <button class="nav-button" onclick="prevPromo()">
+                        ← Назад
+                    </button>
+                    <button class="nav-button" onclick="nextPromo()">
+                        Вперёд →
+                    </button>
+                </div>
+            </section>
+        </main>
+
+         <footer>
+            <div class="footer-block">
+                <div class="logo">Сыр & Ко</div>
+                <div class="social-icons">
+                    <a href="tel:+79262227122"
+                        ><img src="image (1).png" alt="phone"
+                    /></a>
+                    <a href="https://vk.com/yourcompany" target="_blank"
+                        ><img src="image (2).png" alt="vk"
+                    /></a>
+                    <a href="https://t.me/yourcompany" target="_blank"
+                        ><img src="image (3).png" alt="telegram"
+                    /></a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-block">
+                <p>
+                    <strong>Адрес:</strong><br />Красноярск, ул. Щорса, 49<br />10:00
+                    – 22:00
+                </p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-block">
+                <p>
+                    <strong>Контакты:</strong><br />+7 (926) 222-71-22<br />yoprosi@gmail.com<br />ИНН:
+                    212340344883473
+                </p>
+            </div>
+        </footer>
+
+
+        <script>
+            const promoData = [
+                {
+                    image: "https://storage.yandexcloud.net/s3-metaratings-storage/images/45/7e/457e25eeb0293984780172a491c02354.jpg",
+                    title: "Присоединяйтесь к нашему Telegram-каналу",
+                    description: "Эксклюзивные предложения для подписчиков",
+                    button: "Присоединиться",
+                    action: () =>
+                        window.open("https://t.me/yourchannel", "_blank"),
+                },
+                {
+                    image: "https://static.orgpage.ru/socialnewsphotos/fc/fc73a9166f6d40628f00cacd10d5d49e.jpg",
+                    title: "Скидка на вино нашего партнера",
+                    description: "При покупке сыр на 3000 рублей, скидка -30% на вино от компании Кариналол",
+                    button: "Прочитать подробнее",
+                    action: () => alert("При покупке сыра на 3000 рублей, скидка -30% на вино от компании Кариналол, действует при предъявлении чека о покупке в нашем"),
+                },
+                {
+                    image: "https://sun9-77.userapi.com/impg/DhmLsv3rA0YdvVnbSE40tZ9mckEtOb-MNFF3XA/patc6T2fOVo.jpg?size=995x704&quality=95&sign=3d0f69005d3fca1c5fa29f1f504f512f&c_uniq_tag=noRR8fIcf66i1dcpZWrnLn306Cd9xFdS5a8zZ-z5gwI&type=album",
+                    title: "Сыр в подарок к заказу",
+                    description: "При покупке от 5000г — сырная нарезка в подарок",
+                    button: "Условия",
+                    action: () =>
+                        alert("При покупке от 5000г любого сыра — нарезка 200г в подарок!"),
+                },
+                {
+                    image: "https://fis.ru/popup_imgs/12389154.jpg",
+                    title: "Бесплатная доставка",
+                    description: "При заказе от 3000₽ доставляем бесплатно",
+                    button: "Подробнее",
+                    action: () => alert("Действует при заказе от 3000₽."),
+                },
+                {
+                    image: "https://avatars.mds.yandex.net/i?id=e5029c6a3475b9e0f6207bef21486394_l-5222505-images-thumbs&n=13",
+                    title: "Подарок на день рождения",
+                    description: "Специальный сюрприз для именинников",
+                    button: "Получить",
+                    action: () => alert("Предъявите документ в день рождения!"),
+                },
+            ];
+
+            let currentIndex = 0;
+            const perPage = 2;
+
+            function renderPromos() {
+                const container = document.getElementById("promo-container");
+                container.innerHTML = "";
+
+                const visible = promoData.slice(
+                    currentIndex,
+                    currentIndex + perPage
+                );
+                visible.forEach((promo) => {
+                    const card = document.createElement("div");
+                    card.className = "promo-card";
+                    card.innerHTML = `
+                        <img src="${promo.image}" alt="${promo.title}" class="promo-image" />
+                        <div class="promo-content">
+                            <h3>${promo.title}</h3>
+                            <p>${promo.description}</p>
+                            <button class="promo-button">${promo.button}</button>
+                        </div>
+                    `;
+                    card.querySelector("button").onclick = promo.action;
+                    container.appendChild(card);
+                });
+            }
+
+            function nextPromo() {
+                if (currentIndex + perPage < promoData.length) {
+                    currentIndex += perPage;
+                    renderPromos();
+                }
+            }
+
+            function prevPromo() {
+                if (currentIndex - perPage >= 0) {
+                    currentIndex -= perPage;
+                    renderPromos();
+                }
+            }
+
+            window.onload = renderPromos;
+        </script>
+    </body>
+</html>

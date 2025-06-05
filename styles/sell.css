@@ -1,0 +1,244 @@
+/* Основные стили */
+body {
+    margin: 0;
+    font-family: 'Spectral', serif;
+    background-color: #bb8588;
+    color: #5a4a42;
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    background-color: #f0ead2;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: #bb8588;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 32px;
+    color: #bb8588;
+    text-decoration: none;
+}
+
+nav a {
+    margin-left: 20px;
+    color: #bb8588;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d8a48f;
+}
+
+/* Основное содержимое */
+.main-content {
+    padding-bottom: 20px;
+    border-radius: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #fff4db;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #bb8588;
+    margin-bottom: 40px;
+    font-family: 'Spectral', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Секция с акциями */
+.promo-section {
+    margin: 40px 0;
+    background-color: #fff4db;
+}
+
+.promo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.promo-card {
+    background: #f0ead2;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #e0d4b8;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* border-bottom: 3px solid #bb8588; */
+}
+
+.promo-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.promo-content h3 {
+    color: #bb8588;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.promo-content p {
+    color: #5a4a42;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.promo-button {
+    padding: 12px 25px;
+    background-color: #bb8588;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+}
+
+.promo-button:hover {
+    background-color: #d8a48f;
+    transform: scale(1.05);
+}
+
+/* Навигация по акциям */
+.promo-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.nav-button {
+    padding: 12px 25px;
+    background-color: #bb8588;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Spectral', serif;
+}
+
+.nav-button:hover {
+    background-color: #d8a48f;
+    transform: scale(1.05);
+}
+
+/* Подвал */
+footer {
+  background-color: #efebce;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 14px;
+  color: #4c3f2f;
+  gap: 20px;
+}
+
+.footer-block {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-divider {
+  width: 2px;
+  background-color: #bb8588;
+  margin: 0 10px;
+}
+
+footer .logo {
+  font-family: 'Kelly Slab', cursive;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #bb8588;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+    opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .promo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .promo-card {
+        max-width: 100%;
+    }
+    
+    .footer-divider {
+        display: none;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav a {
+        margin: 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
